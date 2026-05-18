@@ -1,26 +1,346 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-navy-900: #000000;
+  --color-navy-800: #111111;
+  --color-navy-700: #000000; /* Primary Brand Black */
+  --color-navy-600: #222222;
+  
+  --color-gold-600: #b58025;
+  --color-gold-500: #D19731; /* Primary Brand Gold */
+  --color-gold-400: #dea645;
+  
+  --color-teal-500: #14B8A6;
+  --color-teal-400: #2DD4BF;
+  
+  --font-serif: "Poppins", "Montserrat", sans-serif;
+  --font-sans: "Lato", "Montserrat", system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-fade-up: fadeUp 0.6s ease-out forwards;
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 }
 
+/* Universal reset removed as it overrides Tailwind v4 layered utilities */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #111827;
+  font-family: 'Lato', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(209, 151, 49, 0.2);
+  color: #111827;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-500);
+  border-radius: 3px;
+}
+
+/* Primary Action Button (Black) */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-navy-700);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-gold:hover {
+  background: var(--color-navy-800);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  color: #FFFFFF;
+}
+
+/* Secondary Action Button (Gold) */
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-gold-500);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(209, 151, 49, 0.25);
+}
+.btn-teal:hover {
+  background: var(--color-gold-600);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(209, 151, 49, 0.35);
+  color: #FFFFFF;
+}
+
+/* Outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  border: 1.5px solid var(--color-navy-700);
+  color: var(--color-navy-700);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--color-navy-700);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Light clean cards instead of dark glassmorphism */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border-color: rgba(209, 151, 49, 0.3);
+}
+
+/* Underline decoration */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-gold-500);
+  border-radius: 2px;
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--color-navy-700);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Fade-up animation utility */
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Dotted grid background (light version) */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Input styling (light version) */
+.form-input {
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.9375rem;
+  outline: none;
+}
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+.form-input:focus {
+  border-color: var(--color-navy-700);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+.form-select {
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.9375rem;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+.form-select:focus {
+  border-color: var(--color-navy-700);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+.form-select option {
+  background: #FFFFFF;
+  color: #111827;
+}
+
+/* Nav links (light theme - assume nav is black/dark) */
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold-500);
+  transition: width 0.25s ease;
+}
+.nav-link:hover {
+  color: #FFFFFF;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Footer nav links */
+.footer-nav-link {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s ease;
+}
+.footer-nav-link:hover {
+  color: var(--color-gold-500);
+}
+
+/* Footer legal links */
+.footer-legal-link {
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s ease;
+}
+.footer-legal-link:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: #4B5563;
+  line-height: 1.5;
+}
+.check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(209, 151, 49, 0.15);
+  border: 1px solid rgba(209, 151, 49, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Stat badge */
+.stat-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.stat-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-navy-700);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: #6B7280;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Responsive containers */
+.container-xl {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container-xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0,0,0,0.98);
+  backdrop-filter: blur(16px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.mobile-menu.open {
+  display: flex;
 }
