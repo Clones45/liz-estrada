@@ -214,6 +214,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      <section className="py-24 bg-white">
+        <div className="container-xl max-w-6xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-14">
+            <div className="section-divider mx-auto mb-6" style={{ background: "linear-gradient(90deg, #C9A84C, #E8C96A)", width: "60px", height: "3px", borderRadius: "3px" }} />
+            <h2 className="font-serif font-bold text-gray-900" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+              Liz in Action
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              A glimpse into Liz's professional journey, dedication to her clients, and community involvement.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+              <div key={num} className="relative aspect-square rounded-2xl overflow-hidden group shadow-lg" style={{ border: "1px solid rgba(0,0,0,0.05)" }}>
+                <Image
+                  src={`/assets/Liz${num}.jpg`}
+                  alt={`Liz Estrada - Gallery Image ${num}`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <LeadCaptureForm />
     </>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 const pillars = [
   {
     id: "pillar-mortgage",
-    href: "/mortgage",
+    href: "https://mortgage.lizestrada.com/",
     accent: "#C9A84C",
     accentRgb: "201,168,76",
     icon: (
@@ -117,10 +117,11 @@ export default function PillarGrid() {
         {/* Pillar cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
-            <div
+            <Link
+              href={pillar.href}
               key={pillar.id}
               id={pillar.id}
-              className="glass-card p-8 flex flex-col animate-fade-up"
+              className="glass-card p-8 flex flex-col animate-fade-up group relative hover:shadow-xl transition-shadow duration-300"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
               {/* Icon */}
@@ -142,7 +143,7 @@ export default function PillarGrid() {
               >
                 {pillar.label}
               </span>
-              <h3 className="font-serif font-bold text-xl text-gray-900 mb-3">
+              <h3 className="font-serif font-bold text-xl text-gray-900 mb-3 group-hover:text-[var(--color-navy-700)] transition-colors">
                 {pillar.tagline}
               </h3>
 
@@ -171,9 +172,8 @@ export default function PillarGrid() {
               </ul>
 
               {/* CTA */}
-              <Link
-                href={pillar.href}
-                className="flex items-center gap-2 text-sm font-semibold group transition-colors duration-200"
+              <div
+                className="flex items-center gap-2 text-sm font-semibold transition-colors duration-200 mt-auto"
                 style={{ color: pillar.accent }}
               >
                 Explore Service
@@ -183,8 +183,8 @@ export default function PillarGrid() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
