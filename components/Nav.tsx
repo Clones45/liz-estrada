@@ -6,7 +6,7 @@ import Link from "next/link";
 const services = [
   {
     label: "Mortgage Solutions",
-    href: "/mortgage",
+    href: "https://mortgage.lizestrada.com/",
     desc: "Residential lending & home loans",
   },
   {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import FundingCalculator from "@/components/FundingCalculator";
 
 export const metadata: Metadata = {
   title: "Business Funding",
@@ -166,6 +167,20 @@ export default function BusinessFundingPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-24" style={{ background: "#F8FAFC" }}>
+        <div className="container-xl">
+          <div className="text-center mb-14">
+            <h2 className="font-serif font-bold text-gray-900 mb-4" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+              Calculate Your Potential Payments
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Use our business funding calculator to estimate your monthly payments based on various funding amounts and terms.
+            </p>
+          </div>
+          <FundingCalculator />
         </div>
       </section>
 
