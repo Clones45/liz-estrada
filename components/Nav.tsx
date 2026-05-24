@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -59,18 +60,15 @@ export default function Nav() {
         <div className="container-xl">
           <div className="flex items-center justify-between h-16 md:h-24">
             {/* Logo */}
-            <Link href="/" className="flex flex-col leading-none group" id="nav-logo">
-              <span
-                className="font-serif font-bold text-2xl tracking-wide text-white"
-              >
-                Liz Estrada
-              </span>
-              <span
-                className="text-[10px] tracking-[0.2em] uppercase font-semibold mt-1"
-                style={{ color: "var(--color-gold-500)" }}
-              >
-                Financial Group
-              </span>
+            <Link href="/" className="flex items-center" id="nav-logo">
+              <Image
+                src="/logo-2_transparent.png"
+                alt="Liz Estrada Logo"
+                width={251}
+                height={160}
+                className="h-14 w-auto md:h-20 md:w-auto object-contain transition-transform duration-300 hover:scale-105"
+                priority
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -166,6 +164,20 @@ export default function Nav() {
       {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`} id="nav-mobile-menu">
         <div className="flex flex-col items-center gap-6 text-center">
+          <Link
+            href="/"
+            className="flex flex-col items-center group mb-4"
+            onClick={() => setMenuOpen(false)}
+          >
+            <div className="relative w-56 h-36 transition-transform duration-300 hover:scale-105">
+              <Image
+                src="/logo-2_transparent.png"
+                alt="Liz Estrada Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
           <Link
             href="/"
             className="text-2xl font-serif font-bold text-white"

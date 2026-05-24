@@ -12,8 +12,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
 
           {/* Column 1: Logos */}
-          <div className="flex flex-col gap-8 items-start lg:col-span-1">
-            <div className="relative w-40 h-16">
+          <div className="flex flex-col gap-6 items-start lg:col-span-1">
+            <Link href="/" className="relative w-56 h-36 block transition-transform duration-300 hover:scale-105">
+              <Image
+                src="/logo-2_transparent.png"
+                alt="Liz Estrada Logo"
+                fill
+                className="object-contain object-left"
+              />
+            </Link>
+            <div className="relative w-40 h-16 mt-2">
               <Image
                 src="/First-Capital.png"
                 alt="First Capital Group"

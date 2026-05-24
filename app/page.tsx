@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import PillarGrid from "@/components/PillarGrid";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import FaqSection from "@/components/FaqSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -166,6 +167,7 @@ export default function HomePage() {
       </section>
 
       <LeadCaptureForm />
+      <FaqSection />
     </>
   );
 }

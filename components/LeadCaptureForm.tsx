@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const services = [
@@ -11,14 +11,25 @@ const services = [
   "Not Sure — Need Guidance",
 ];
 
-export default function LeadCaptureForm() {
+interface LeadCaptureFormProps {
+  defaultService?: string;
+}
+
+export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureFormProps) {
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    service: "",
+    service: defaultService,
     message: "",
   });
+
+  // When parent updates defaultService (modal → scroll), sync the dropdown
+  useEffect(() => {
+    if (defaultService) {
+      setForm((prev) => ({ ...prev, service: defaultService }));
+    }
+  }, [defaultService]);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
