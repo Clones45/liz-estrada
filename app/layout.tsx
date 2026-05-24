@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lizestrada.com"),
   title: {
     default: "Liz Estrada | Financial Expert — Mortgage, Credit Repair & Business Funding",
     template: "%s | Liz Estrada Financial",
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
     "credit restoration",
     "business lines of credit",
   ],
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -28,6 +37,14 @@ export const metadata: Metadata = {
     title: "Liz Estrada | Financial Expert — Mortgage, Credit Repair & Business Funding",
     description:
       "20+ years of expertise in mortgage lending, credit restoration, and business capital solutions.",
+    images: [
+      {
+        url: "/logo-2_transparent.png",
+        width: 1169,
+        height: 926,
+        alt: "Liz Estrada Financial",
+      },
+    ],
   },
 };
 
