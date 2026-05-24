@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const pillars = [
   {
@@ -84,46 +85,46 @@ export default function PillarGrid() {
       />
 
       <div className="container-xl relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="section-divider" />
-          <span
-            className="text-xs font-semibold tracking-widest uppercase block mb-3"
-            style={{ color: "var(--color-navy-700)" }}
-          >
-            Our Services
-          </span>
-          <h2
-            className="font-serif font-bold mb-4"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#111827" }}
-          >
-            Three Pillars of{" "}
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <div className="section-divider" />
             <span
-              style={{
-                background: "linear-gradient(135deg, #C9A84C, #E8C96A)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              className="text-xs font-semibold tracking-widest uppercase block mb-3"
+              style={{ color: "var(--color-navy-700)" }}
             >
-              Excellence
+              Our Services
             </span>
-          </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "#111827" }}>
-            A comprehensive ecosystem of financial solutions built around your success.
-          </p>
-        </div>
+            <h2
+              className="font-serif font-bold mb-4"
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#111827" }}
+            >
+              Three Pillars of{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #C9A84C, #E8C96A)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Excellence
+              </span>
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#111827" }}>
+              A comprehensive ecosystem of financial solutions built around your success.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Pillar cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
-            <Link
-              href={pillar.href}
-              key={pillar.id}
-              id={pillar.id}
-              className="glass-card p-8 flex flex-col animate-fade-up group relative hover:shadow-xl transition-shadow duration-300"
-              style={{ animationDelay: `${i * 0.15}s` }}
-            >
+            <ScrollReveal key={pillar.id} delay={i * 120} direction="up">
+              <Link
+                href={pillar.href}
+                id={pillar.id}
+                className="glass-card p-8 flex flex-col group relative hover:shadow-xl transition-shadow duration-300"
+              >
               {/* Icon */}
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
@@ -185,6 +186,7 @@ export default function PillarGrid() {
                 </svg>
               </div>
             </Link>
+            </ScrollReveal>
           ))}
         </div>
       </div>

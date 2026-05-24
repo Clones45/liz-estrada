@@ -132,7 +132,7 @@ export default function Nav() {
             <div className="hidden md:flex items-center gap-3">
               <Link
                 href="/consultation"
-                className="btn-gold px-6 py-2.5 rounded-md text-sm"
+                className="btn-gold nav-cta-pulse px-6 py-2.5 rounded-md text-sm"
                 id="nav-cta-book"
               >
                 Book Consultation
@@ -204,7 +204,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/consultation"
-            className="btn-gold px-8 py-3.5 rounded-md text-base mt-4"
+            className="btn-gold nav-cta-pulse px-8 py-3.5 rounded-md text-base mt-4"
             onClick={() => setMenuOpen(false)}
             id="nav-mobile-cta"
           >

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lizestrada.com"),
@@ -65,7 +66,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <Nav />
-        <main>{children}</main>
+        <main>
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
