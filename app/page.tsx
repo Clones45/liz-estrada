@@ -83,7 +83,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 120} direction="up">
+              <ScrollReveal key={i} delay={i * 120}>
                 <div
                   className="glass-card p-7 flex flex-col"
                 >
@@ -132,7 +132,7 @@ export default function HomePage() {
         id="about-teaser"
       >
         <div className="container-xl">
-          <ScrollReveal direction="up">
+          <ScrollReveal>
             <div
               className="rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center gap-10"
               style={{

@@ -116,76 +116,75 @@ export default function PillarGrid() {
           </div>
         </ScrollReveal>
 
-        {/* Pillar cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
-            <ScrollReveal key={pillar.id} delay={i * 120} direction="up">
+            <ScrollReveal key={pillar.id} delay={i * 120}>
               <Link
                 href={pillar.href}
                 id={pillar.id}
                 className="glass-card p-8 flex flex-col group relative hover:shadow-xl transition-shadow duration-300"
               >
-              {/* Icon */}
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                style={{
-                  background: `rgba(${pillar.accentRgb}, 0.1)`,
-                  border: `1px solid rgba(${pillar.accentRgb}, 0.25)`,
-                  color: pillar.accent,
-                }}
-              >
-                {pillar.icon}
-              </div>
-
-              {/* Label & tagline */}
-              <span
-                className="text-xs font-semibold tracking-widest uppercase block mb-1"
-                style={{ color: pillar.accent }}
-              >
-                {pillar.label}
-              </span>
-              <h3 className="font-serif font-bold text-xl text-gray-900 mb-3 group-hover:text-[var(--color-navy-700)] transition-colors">
-                {pillar.tagline}
-              </h3>
-
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#111827" }}>
-                {pillar.description}
-              </p>
-
-              {/* Divider */}
-              <div
-                className="h-px mb-6"
-                style={{ background: `linear-gradient(90deg, rgba(${pillar.accentRgb}, 0.3), transparent)` }}
-              />
-
-              {/* Checklist */}
-              <ul className="space-y-2.5 flex-1 mb-8">
-                {pillar.checks.map((item) => (
-                  <li key={item} className="check-item">
-                    <span className="check-icon">
-                      <svg className="w-2.5 h-2.5" style={{ color: "#14B8A6" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <div
-                className="flex items-center gap-2 text-sm font-semibold transition-colors duration-200 mt-auto"
-                style={{ color: pillar.accent }}
-              >
-                Explore Service
-                <svg
-                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+                {/* Icon */}
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                  style={{
+                    background: `rgba(${pillar.accentRgb}, 0.1)`,
+                    border: `1px solid rgba(${pillar.accentRgb}, 0.25)`,
+                    color: pillar.accent,
+                  }}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </div>
-            </Link>
+                  {pillar.icon}
+                </div>
+
+                {/* Label & tagline */}
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase block mb-1"
+                  style={{ color: pillar.accent }}
+                >
+                  {pillar.label}
+                </span>
+                <h3 className="font-serif font-bold text-xl text-gray-900 mb-3 group-hover:text-[var(--color-navy-700)] transition-colors">
+                  {pillar.tagline}
+                </h3>
+
+                <p className="text-sm leading-relaxed mb-6" style={{ color: "#111827" }}>
+                  {pillar.description}
+                </p>
+
+                {/* Divider */}
+                <div
+                  className="h-px mb-6"
+                  style={{ background: `linear-gradient(90deg, rgba(${pillar.accentRgb}, 0.3), transparent)` }}
+                />
+
+                {/* Checklist */}
+                <ul className="space-y-2.5 flex-1 mb-8">
+                  {pillar.checks.map((item) => (
+                    <li key={item} className="check-item">
+                      <span className="check-icon">
+                        <svg className="w-2.5 h-2.5" style={{ color: "#14B8A6" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <div
+                  className="flex items-center gap-2 text-sm font-semibold transition-colors duration-200 mt-auto"
+                  style={{ color: pillar.accent }}
+                >
+                  Explore Service
+                  <svg
+                    className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
