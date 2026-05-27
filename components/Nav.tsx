@@ -62,7 +62,7 @@ export default function Nav() {
             {/* Logo */}
             <Link href="/" className="flex items-center" id="nav-logo">
               <Image
-                src="/logo-2_transparent.png"
+                src="/logo-6_transparent.png"
                 alt="Liz Estrada Logo"
                 width={251}
                 height={160}
@@ -171,7 +171,7 @@ export default function Nav() {
           >
             <div className="relative w-56 h-36 transition-transform duration-300 hover:scale-105">
               <Image
-                src="/logo-2_transparent.png"
+                src="/logo-6_transparent.png"
                 alt="Liz Estrada Logo"
                 fill
                 className="object-contain"

@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 items-start lg:col-span-1">
             <Link href="/" className="relative w-56 h-36 block transition-transform duration-300 hover:scale-105">
               <Image
-                src="/logo-2_transparent.png"
+                src="/logo-6_transparent.png"
                 alt="Liz Estrada Logo"
                 fill
                 className="object-contain object-left"

@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
+      { url: "/logo-6.png", type: "image/png" },
     ],
     apple: [
-      { url: "/icon.png", type: "image/png" },
+      { url: "/logo-6.png", type: "image/png" },
     ],
   },
   openGraph: {
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
       "20+ years of expertise in mortgage lending, credit restoration, and business capital solutions.",
     images: [
       {
-        url: "/logo-2_transparent.png",
-        width: 1169,
-        height: 926,
+        url: "/logo-6.png",
+        width: 800,
+        height: 600,
         alt: "Liz Estrada Financial",
       },
     ],
