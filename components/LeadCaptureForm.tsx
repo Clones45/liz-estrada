@@ -35,7 +35,7 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
   const [error, setError] = useState<string | null>(null);
 
   const GHL_WEBHOOK_URL =
-    "https://services.leadconnectorhq.com/hooks/dtYoeW5P9L3VTRMPUZ3q/webhook-trigger/5b66df57-fbef-4080-a4e7-bf76a68897b1";
+    "https://services.leadconnectorhq.com/hooks/dtYoeW5P9L3VTRMPUZ3q/webhook-trigger/8b56b165-08e9-4581-acc9-c132994571a9";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
