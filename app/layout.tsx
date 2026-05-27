@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/logo-6.png", type: "image/png" },
+      { url: "/logo-6_transparent.png", type: "image/png" },
     ],
     apple: [
-      { url: "/logo-6.png", type: "image/png" },
+      { url: "/logo-6_transparent.png", type: "image/png" },
     ],
   },
   openGraph: {

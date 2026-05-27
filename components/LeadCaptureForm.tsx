@@ -32,6 +32,10 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
   }, [defaultService]);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const GHL_WEBHOOK_URL =
+    "https://services.leadconnectorhq.com/hooks/dtYoeW5P9L3VTRMPUZ3q/webhook-trigger/531e1193-4abe-41a1-a2e9-4d197ba8ea74";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -40,10 +44,32 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+
+    try {
+      const response = await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          full_name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed (${response.status})`);
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("GHL webhook error:", err);
+      setError("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -253,6 +279,16 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
                     />
                   </div>
                 </div>
+
+                {error && (
+                  <div
+                    className="mt-4 p-3 rounded-lg text-sm text-center"
+                    style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)", color: "#DC2626" }}
+                    id="form-error-message"
+                  >
+                    {error}
+                  </div>
+                )}
 
                 <button
                   type="submit"
