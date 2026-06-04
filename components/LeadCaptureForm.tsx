@@ -203,37 +203,20 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="form-email" className="block text-xs font-semibold tracking-wide uppercase mb-2" style={{ color: "#111827" }}>
-                        Email Address *
-                      </label>
-                      <input
-                        id="form-email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="you@email.com"
-                        value={form.email}
-                        onChange={handleChange}
-                        className="form-input"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="form-phone" className="block text-xs font-semibold tracking-wide uppercase mb-2" style={{ color: "#111827" }}>
-                        Phone Number *
-                      </label>
-                      <input
-                        id="form-phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        placeholder="(XXX) XXX-XXXX"
-                        value={form.phone}
-                        onChange={handleChange}
-                        className="form-input"
-                      />
-                    </div>
+                  <div>
+                    <label htmlFor="form-email" className="block text-xs font-semibold tracking-wide uppercase mb-2" style={{ color: "#111827" }}>
+                      Email Address *
+                    </label>
+                    <input
+                      id="form-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@email.com"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
                   </div>
 
                   <div>
