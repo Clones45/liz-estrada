@@ -295,7 +295,7 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
                     className="mt-1"
                   />
                   <label htmlFor="form-optin" className="text-xs text-gray-600 leading-tight">
-                    I agree to receive SMS and email communications from Elite Integrity Solutions LLC regarding my inquiry and service updates. Message frequency varies. Msg & data rates may apply. Reply STOP to opt-out. By checking this box, I agree to the <Link href="/terms-of-service" className="underline text-blue-600">Terms of Service</Link> and <Link href="/privacy-policy" className="underline text-blue-600">Privacy Policy</Link>.
+                    I agree to receive promotional and informational SMS and email communications from Elite Integrity Solutions LLC. Message frequency varies. Msg & data rates may apply. Reply STOP to opt-out. By checking this box, I agree to the <Link href="/terms-of-service" className="underline text-blue-600">Terms of Service</Link> and <Link href="/privacy-policy" className="underline text-blue-600">Privacy Policy</Link>.
                   </label>
                 </div>
 
