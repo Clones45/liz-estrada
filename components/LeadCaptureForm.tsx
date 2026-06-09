@@ -22,6 +22,7 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
     phone: "",
     service: defaultService,
     message: "",
+    optIn: false,
   });
 
   // When parent updates defaultService (modal → scroll), sync the dropdown
@@ -38,7 +39,12 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
     "https://services.leadconnectorhq.com/hooks/dtYoeW5P9L3VTRMPUZ3q/webhook-trigger/0e1177c5-97f5-412b-8ba2-6bcbd86512a2";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      setForm((prev) => ({ ...prev, [name]: (e.target as HTMLInputElement).checked }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -220,6 +226,22 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
                   </div>
 
                   <div>
+                    <label htmlFor="form-phone" className="block text-xs font-semibold tracking-wide uppercase mb-2" style={{ color: "#111827" }}>
+                      Phone Number *
+                    </label>
+                    <input
+                      id="form-phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="(555) 000-0000"
+                      value={form.phone}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+
+                  <div>
                     <label htmlFor="form-service" className="block text-xs font-semibold tracking-wide uppercase mb-2" style={{ color: "#111827" }}>
                       What financial solution do you need today? *
                     </label>
@@ -261,6 +283,20 @@ export default function LeadCaptureForm({ defaultService = "" }: LeadCaptureForm
                       className="form-input resize-none"
                     />
                   </div>
+                </div>
+
+                <div className="flex items-start gap-3 mt-4">
+                  <input
+                    type="checkbox"
+                    id="form-optin"
+                    name="optIn"
+                    checked={form.optIn}
+                    onChange={handleChange}
+                    className="mt-1"
+                  />
+                  <label htmlFor="form-optin" className="text-xs text-gray-600 leading-tight">
+                    I agree to receive SMS and email communications from Elite Integrity Solutions LLC regarding my inquiry and service updates. Message frequency varies. Msg & data rates may apply. Reply STOP to opt-out. By checking this box, I agree to the <Link href="/terms-of-service" className="underline text-blue-600">Terms of Service</Link> and <Link href="/privacy-policy" className="underline text-blue-600">Privacy Policy</Link>.
+                  </label>
                 </div>
 
                 {error && (

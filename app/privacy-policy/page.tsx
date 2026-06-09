@@ -84,6 +84,13 @@ export default function PrivacyPolicyPage() {
             <p>Email: liz@lizestrada.com</p>
             <p>Phone: (559) 737-0273</p>
           </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Cookies and Tracking</h2>
+            <p>
+              We may use cookies and similar tracking technologies to enhance your experience on our website, analyze trends, and track users&apos; movements around the website. You can control the use of cookies at the individual browser level.
+            </p>
+          </section>
         </div>
       </div>
     </main>

@@ -91,6 +91,20 @@ export default function TermsOfServicePage() {
             <p>Email: liz@lizestrada.com</p>
             <p>Phone: (559) 737-0273</p>
           </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Carrier Liability</h2>
+            <p>
+              Mobile carriers are not liable for delayed or undelivered messages.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Age Restriction</h2>
+            <p>
+              You must be at least 18 years of age to use our services and opt-in to our communications.
+            </p>
+          </section>
         </div>
       </div>
     </main>
