@@ -41,8 +41,8 @@ export default function Footer() {
           <div className="lg:ml-4">
             <h3 className="font-bold text-lg mb-6 tracking-wide">Important Pages</h3>
             <ul className="space-y-4 font-semibold text-[15px]">
-              <li><Link href="#" className="hover:text-gray-300 transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-gray-300 transition-colors">Terms of Service</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link></li>
               <li><Link href="#" className="hover:text-gray-300 transition-colors">Accessibility Assistance</Link></li>
             </ul>
           </div>
