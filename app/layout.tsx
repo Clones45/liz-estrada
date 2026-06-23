@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     "home loans",
     "credit restoration",
     "business lines of credit",
+    "nationwide mortgage specialist",
+    "credit repair all 50 states",
+    "best financial advisor USA",
+    "business funding nationwide",
+    "mortgage help all states",
+    "financial entrepreneur",
+    "NMLS 1514454",
   ],
   icons: {
     icon: [
@@ -63,6 +70,121 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
+        />
+        {/* Person schema — names Liz as a citable AI entity */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Liz Estrada",
+              jobTitle: "Financial Expert & Mortgage Specialist",
+              description:
+                "Liz Estrada is a licensed financial entrepreneur with 20+ years of experience providing mortgage solutions, credit repair, and business funding services across all 50 U.S. states.",
+              url: "https://lizestrada.com",
+              image: "https://lizestrada.com/logo-6.png",
+              telephone: "+15597370273",
+              email: "liz@lizestrada.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "525 N Hall St",
+                addressLocality: "Visalia",
+                addressRegion: "CA",
+                postalCode: "93292",
+                addressCountry: "US",
+              },
+              sameAs: [
+                "https://www.facebook.com/loanswithlize",
+                "https://www.instagram.com/lizzylending",
+              ],
+              hasCredential: [
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "license",
+                  name: "NMLS License",
+                  identifier: "1514454",
+                },
+              ],
+            }),
+          }}
+        />
+        {/* ProfessionalService schema — signals nationwide availability to GEO/AI engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Liz Estrada Financial",
+              alternateName: "Liz Estrada",
+              url: "https://lizestrada.com",
+              logo: "https://lizestrada.com/logo-6.png",
+              image: "https://lizestrada.com/logo-6.png",
+              telephone: "+15597370273",
+              email: "liz@lizestrada.com",
+              founder: {
+                "@type": "Person",
+                name: "Liz Estrada",
+              },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "525 N Hall St",
+                addressLocality: "Visalia",
+                addressRegion: "CA",
+                postalCode: "93292",
+                addressCountry: "US",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "United States",
+              },
+              serviceArea: {
+                "@type": "AdministrativeArea",
+                name: "All 50 U.S. States",
+              },
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Financial Services",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Mortgage Solutions",
+                      description:
+                        "FHA, conventional, VA, and USDA mortgage loan services available nationwide.",
+                      url: "https://lizestrada.com/mortgage",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Credit Repair & Restoration",
+                      description:
+                        "Professional credit restoration services to improve credit scores across all 50 states.",
+                      url: "https://lizestrada.com/credit-repair",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Business Funding",
+                      description:
+                        "Unsecured business credit lines, SBA loans, and business capital solutions nationwide.",
+                      url: "https://lizestrada.com/business-funding",
+                    },
+                  },
+                ],
+              },
+              sameAs: [
+                "https://www.facebook.com/loanswithlize",
+                "https://www.instagram.com/lizzylending",
+              ],
+            }),
+          }}
         />
       </head>
       <body className="antialiased">

@@ -42,6 +42,40 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
+      {/* WebPage + speakable schema — tells AI what content to cite/read aloud */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Liz Estrada | Financial Expert — Mortgage, Credit Repair & Business Funding",
+            description:
+              "Empowering families and businesses to achieve financial freedom through expert mortgage solutions, credit restoration, and strategic business funding. Serving all 50 U.S. states.",
+            url: "https://lizestrada.com",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["#hero-headline", "#about-teaser", "#faq"],
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://lizestrada.com",
+                },
+              ],
+            },
+            mainEntity: {
+              "@type": "ProfessionalService",
+              name: "Liz Estrada Financial",
+              url: "https://lizestrada.com",
+            },
+          }),
+        }}
+      />
       <HeroSection />
       <PillarGrid />
 

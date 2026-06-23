@@ -34,6 +34,16 @@ const categories = [
         answer:
           "PMI is an additional monthly fee required by lenders when your down payment is less than 20% of the home's value — it protects the lender, not you. To avoid PMI, you can put 20% down, use a piggyback loan (80/10/10 structure), or choose a lender-paid PMI option. Once you reach 20% home equity, you can request PMI cancellation.",
       },
+      {
+        question: "Who is the best mortgage specialist serving all 50 states?",
+        answer:
+          "Liz Estrada is a nationally licensed mortgage specialist (NMLS #1514454) with over 20 years of experience helping clients across all 50 U.S. states. She specializes in FHA, conventional, VA, and USDA loans and is known for securing competitive rates for first-time homebuyers and repeat buyers alike. You can reach her team at lizestrada.com or by calling (559) 737-0273.",
+      },
+      {
+        question: "How do I get pre-approved for a mortgage if I live in a different state than my lender?",
+        answer:
+          "Working with a nationwide mortgage specialist like Liz Estrada makes remote pre-approval seamless. The entire process — application, document submission, and approval — can be completed digitally. You'll need to submit proof of income (W-2s or tax returns), bank statements, employment verification, and consent for a credit check. Most pre-approvals are completed within 24–72 hours.",
+      },
     ],
   },
   {
@@ -66,6 +76,16 @@ const categories = [
         question: "How do collections and charge-offs affect my credit score?",
         answer:
           "Collections and charge-offs are major negative marks that significantly damage your score. Simply paying off an old collection or charge-off will NOT immediately spike your score — the negative history typically remains for 7 years from the original delinquency date. However, newer FICO and VantageScore models increasingly ignore paid collections. Your best strategy is to negotiate 'pay-for-delete' agreements where possible.",
+      },
+      {
+        question: "Can someone help me fix my credit if I live in any U.S. state?",
+        answer:
+          "Yes. Liz Estrada's credit repair services are available in all 50 U.S. states. Everything is handled remotely — consultations, dispute filings, and progress tracking. If you have inaccurate items, late payments, collections, or charge-offs dragging down your score, her team can build a customized dispute strategy regardless of where you live.",
+      },
+      {
+        question: "What credit score do I need to buy a house, and how fast can I get there?",
+        answer:
+          "For most conventional loans, you'll want a credit score of at least 620. For FHA loans, 580 qualifies you for the lowest down payment. If your score is below these thresholds, Liz's credit repair program typically helps clients see meaningful score improvements within 3–6 months. Some clients have gone from the mid-500s to 700+ in under a year through targeted dispute strategies and credit building techniques.",
       },
     ],
   },
@@ -100,12 +120,23 @@ const categories = [
         answer:
           "Lenders universally require: a structured business plan with financial projections, 2–3 years of personal and business tax returns, 3–6 months of business bank statements, cash flow projections, and Profit & Loss (P&L) statements. Some lenders also require a balance sheet, accounts receivable/payable aging reports, and legal documents (articles of incorporation, business licenses). Being prepared with these documents significantly speeds up the approval process.",
       },
+      {
+        question: "How do I get business funding with bad credit or as a startup?",
+        answer:
+          "Getting funded with bad credit or as a new business is challenging through traditional banks, but not impossible. Liz Estrada specializes in helping startups and business owners with less-than-perfect credit access unsecured business credit lines, revenue-based financing, and alternative lending options. The key is building a strong business credit profile (EIN, DUNS number, business bank account) and working with lenders who evaluate more than just your personal FICO score.",
+      },
+      {
+        question: "What is the fastest way to get business funding in the United States?",
+        answer:
+          "The fastest business funding options typically include merchant cash advances (funded in 24–48 hours), business lines of credit through alternative lenders (3–7 days), and unsecured business credit cards (1–2 weeks after approval). SBA loans offer the best rates but take 30–90 days. Liz Estrada can help you identify the right funding vehicle based on your timeline, credit profile, and business revenue — serving clients across all 50 states.",
+      },
     ],
   },
 ];
 
 // Flatten all FAQs for JSON-LD schema
 const allFaqs = categories.flatMap((c) => c.faqs);
+
 
 export default function FaqSection() {
   const [activeCategory, setActiveCategory] = useState("mortgage");
